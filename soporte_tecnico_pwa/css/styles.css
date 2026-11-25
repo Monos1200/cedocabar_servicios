@@ -1,0 +1,92 @@
+/* css/styles.css */
+:root {
+    --navy-dark: #061326;
+    --navy-primary: #0b2545;
+    --navy-accent: #134074;
+    --blue-highlight: #1d63b8;
+    --ice-white: #f4f7fb;
+    --pure-white: #ffffff;
+}
+
+body.bg-cedocabar {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy-primary) 42%, var(--navy-accent) 72%, var(--ice-white) 100%);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+}
+
+/* Preloader Institucional */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy-accent));
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-ring {
+    width: 64px;
+    height: 64px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tarjeta Login y Contenedores */
+.card-institucional {
+    background: rgba(255, 255, 255, 0.97);
+    border: none;
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 40px rgba(6, 19, 38, 0.35);
+    backdrop-filter: blur(8px);
+}
+
+.header-badge-navy {
+    background: linear-gradient(135deg, var(--navy-primary), var(--navy-accent));
+    color: var(--pure-white);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 8px 20px rgba(11, 37, 69, 0.25);
+}
+
+.btn-navy {
+    background: linear-gradient(135deg, var(--navy-primary), var(--blue-highlight));
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-navy:hover, .btn-navy:focus {
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy-primary));
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(11, 37, 69, 0.35);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--navy-accent);
+    box-shadow: 0 0 0 0.2rem rgba(19, 64, 116, 0.18);
+}
+
+/* Navbar Superior Móvil */
+.navbar-cedocabar {
+    background: linear-gradient(90deg, var(--navy-dark) 0%, var(--navy-primary) 65%, var(--navy-accent) 100%);
+    box-shadow: 0 4px 14px rgba(6, 19, 38, 0.25);
+}
